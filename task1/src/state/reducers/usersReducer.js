@@ -1,40 +1,47 @@
 const initialState = {
-  status: "undefined",
-  users: [],
+	status: "undefined",
+	users: [],
+	selectedUser: {},
+	filteredUsers: [],
 };
 
-const filterState = (state, trimValue, trimType) => {};
-
 const usersReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "LOADING":
-      return {
-        ...state,
-        status: "loading",
-      };
+	switch (action.type) {
+		case "SELECT":
+			return {
+				...state,
+				selectedUser: action.payload.user,
+			};
 
-    case "LOADED":
-      return {
-        users: action.payload.users,
-        status: "loaded",
-      };
+		case "LOADING":
+			return {
+				...state,
+				status: "loading",
+			};
 
-    case "LOADING_ERROR":
-      return {
-        ...state,
-        status: "error",
-      };
+		case "LOADED":
+			return {
+				...state,
+				users: action.payload.users,
+				filteredUsers: action.payload.users,
+				status: "loaded",
+			};
 
-    case "FILTER":
-      return filterState(
-        state,
-        action.payload.filterValue,
-        action.payload.filterType
-      );
+		case "LOADING_ERROR":
+			return {
+				...state,
+				status: "error",
+			};
 
-    default:
-      return state;
-  }
+		case "SET_FILTERED_USERS":
+			return {
+				...state,
+				filteredUsers: action.payload.filteredUsers,
+			};
+
+		default:
+			return state;
+	}
 };
 
 export default usersReducer;

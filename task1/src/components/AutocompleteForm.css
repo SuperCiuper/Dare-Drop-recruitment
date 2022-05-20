@@ -1,0 +1,45 @@
+.AutocompleteForm {
+	float: left;
+	display: inline;
+	position: relative;
+}
+
+input {
+	border: 2px solid rgb(34, 134, 34);
+	border-radius: 6px;
+	padding: 0.5rem;
+	width: 300px;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+input:focus {
+	border-color: rgb(248, 12, 236);
+}
+
+.AutocompleteFormList {
+	border: 1px solid #999;
+	border-top-width: 0;
+	margin-top: 0;
+	max-height: 12rem;
+	overflow-y: auto;
+	width: calc(300px + 1rem);
+	margin-left: 1rem;
+}
+
+.AutocompleteFormList li {
+	padding: 0.5rem;
+}
+
+.AutocompleteFormList li:hover {
+	background-color: #6e97aa;
+	cursor: pointer;
+}
+
+.AutocompleteFormList li:nth-child(2n) {
+	background-color: #d0d3ae;
+}
+
+button {
+	padding: 0.5rem;
+}

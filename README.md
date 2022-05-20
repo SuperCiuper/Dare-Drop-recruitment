@@ -1,6 +1,6 @@
 # Dare Drop recruitment
 
-Repository with solutions for reqruitment tasks.
+Repository with solutions for recruitment tasks.
 
 ## Task 1:
 
